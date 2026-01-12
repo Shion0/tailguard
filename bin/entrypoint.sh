@@ -306,7 +306,7 @@ export TS_USERSPACE="false"
 
 export TS_NETMON_IGNORE="${WG_DEVICE}"
 export TS_TAILSCALED_EXTRA_ARGS="--tun="${TS_DEVICE}" --port=${TS_PORT}"
-TS_EXTRA_ARGS="--reset --accept-routes"
+TS_EXTRA_ARGS="--reset --advertise-connector --accept-routes"
 if [ -n "${TS_LOGIN_SERVER}" ]; then TS_EXTRA_ARGS="$TS_EXTRA_ARGS --login-server=${TS_LOGIN_SERVER}"; fi
 if [ -n "${TS_EXIT_NODE}" ]; then TS_EXTRA_ARGS="$TS_EXTRA_ARGS --exit-node=${TS_EXIT_NODE} --exit-node-allow-lan-access"; fi
 if [ ${ADVERTISE_EXIT_NODE} -eq 1 ]; then TS_EXTRA_ARGS="$TS_EXTRA_ARGS --advertise-exit-node"; fi
